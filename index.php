@@ -1,18 +1,20 @@
 <?php
-SESSION_START();
-//Song Titles
+session_start();
+
+//
 $song_lyrics1 = "13";
 $song_lyrics2 = "Super Far";
 $song_lyrics3 = "I still talk to Jesus";
 $song_lyrics4 = "Pink skies";
 $song_lyrics5 = "Hurts";
-//current url redirection
+
+//
 $url_add = "http://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
 
 
 //kung keri iclick buttons
 if(isset($_REQUEST['search_button'])=== true){
-    //song title url
+    //url
     if($_REQUEST['song_title'] == $song_lyrics1){
         header("Location: ".$url_add."?13");
     }
@@ -61,11 +63,11 @@ if(isset($_REQUEST['search_button'])=== true){
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link text-light" href="#">Song 1</a></li>
-                        <li class="nav-item"><a class="nav-link text-light" href="#">Song 2</a></li>
-                        <li class="nav-item"><a class="nav-link text-light" href="#">Song 3</a></li>
-                         <li class="nav-item"><a class="nav-link text-light" href="#">Song 4</a></li>
-                          <li class="nav-item"><a class="nav-link text-light" href="#">Song 5</a></li>
+                        <li class="nav-item"><a class="nav-link text-light" href="song1.php">Song 1</a></li>
+                        <li class="nav-item"><a class="nav-link text-light" href="song2.php">Song 2</a></li>
+                        <li class="nav-item"><a class="nav-link text-light" href="song3.php">Song 3</a></li>
+                        <li class="nav-item"><a class="nav-link text-light" href="song4.php">Song 4</a></li>
+                        <li class="nav-item"><a class="nav-link text-light" href="song5.php">Song 5</a></li>
                     </ul>
                 </div>
             </div>
@@ -87,6 +89,7 @@ if(isset($_REQUEST['search_button'])=== true){
                             <div class="form-group">
 
 
+                                //sa search
                                 <?php
                                 if(isset($_REQUEST['13']) === true){
                                     echo "Redirecting...";
